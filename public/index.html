@@ -5,6 +5,7 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
     <script src="amazon-connect-chat-interface.js"></script>
     <script src="backendEndpoints.js"></script>
   </head>
@@ -23,8 +24,8 @@
         height: 100vh;
       }
       *[class^="acButtonStyles"],  *[class^="acCloseButton"], *[class^="acOpenButton"]  {
-        width: 100px !important;
-        height: 100px !important;
+        width: 1px !important;
+        height: 1px !important;
         background-color: black;
       }
     </style>
@@ -36,7 +37,7 @@
       console.log('snippetId', snippetId);
       (function (w, d, x, id) {
         s = d.createElement("script");
-        s.src = "https://dtn7rvxwwlhud.cloudfront.net/amazon-connect-chat-interface-client.js";
+        s.src = src || "https://dtn7rvxwwlhud.cloudfront.net/amazon-connect-chat-interface-client.js";
         s.async = 1;
         s.id = id;
         d.getElementsByTagName("head")[0].appendChild(s);
@@ -57,20 +58,20 @@
       });
       amazon_connect(
         "snippetId",
-         "QVFJREFIakZhMVo2ZGZmSXpGSnpJS2lYakthYVBxMmJIU0ZPbnhET3AyalJDV1F3UWdGc21FTk01cmNFUkRmcnBQbkRSUE0rQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNeFpuclFJZldmSGp5YUx1REFnRVFnQ3M5OVVVaDI0UCs2SFdIUk9WSVVIMlVUekl2a1RkcVNQemhPb3VRckFrS3p1S293Um9UT2phQ2hpd1U6OjlMb2RqNGZwY2phSkFIOG10TEZYYzhVZWJ6dDc0NURFZXFPRzl4cmxLYXJrQ2lHUVQ4b2t2OEhVcEhBajkyK2lRVzBGbTd5UDFTMVprOHNLT2pzcFJmSWtoOW5NSGszTUhBRGxZdGgyUUVaVE5hWFhaSDBNVWgycnpScFJXL014TDNxbVVGTmRwQTIyb0R0WnY5TW9OeWlMSytDOUxCdz0="
+         snippetId || "QVFJREFIakZhMVo2ZGZmSXpGSnpJS2lYakthYVBxMmJIU0ZPbnhET3AyalJDV1F3UWdGc21FTk01cmNFUkRmcnBQbkRSUE0rQUFBQWJqQnNCZ2txaGtpRzl3MEJCd2FnWHpCZEFnRUFNRmdHQ1NxR1NJYjNEUUVIQVRBZUJnbGdoa2dCWlFNRUFTNHdFUVFNeFpuclFJZldmSGp5YUx1REFnRVFnQ3M5OVVVaDI0UCs2SFdIUk9WSVVIMlVUekl2a1RkcVNQemhPb3VRckFrS3p1S293Um9UT2phQ2hpd1U6OjlMb2RqNGZwY2phSkFIOG10TEZYYzhVZWJ6dDc0NURFZXFPRzl4cmxLYXJrQ2lHUVQ4b2t2OEhVcEhBajkyK2lRVzBGbTd5UDFTMVprOHNLT2pzcFJmSWtoOW5NSGszTUhBRGxZdGgyUUVaVE5hWFhaSDBNVWgycnpScFJXL014TDNxbVVGTmRwQTIyb0R0WnY5TW9OeWlMSytDOUxCdz0="
       );
       amazon_connect("supportedMessagingContentTypes", [
         "text/plain",
         "text/markdown",
       ]);
 
-      // setTimeout(() => {
-      //   console.log(
-      //     "button",
-      //     document.querySelector("[class^='acOpenButton']")
-      //   );
-      //  document.querySelector("[class^='acOpenButton']").click();
-      // }, 1000);
+      setTimeout(() => {
+        console.log(
+          "button",
+          document.querySelector("[class^='acOpenButton']")
+        );
+       document.querySelector("[class^='acOpenButton']").click();
+      }, 1000);
     </script>
   </body>
 </html>
